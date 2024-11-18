@@ -4,7 +4,22 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: ["./templates/**/*.{html,js}"],
   theme: {
+    fontFamily: {
+      merriweather: ['Merriweather', 'serif'],
+    },
     extend: {
+      animation: {
+        slide: "slide 9s linear infinite",
+      },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateY(100%)", opacity: 0.1 },
+          "15%": { transform: "translateY(0)", opacity: 1 },
+          "30%": { transform: "translateY(0)", opacity: 1 },
+          "45%": { transform: "translateY(-100%)", opacity: 1 },
+          "100%": { transform: "translateY(-100%)", opacity: 0.1 },
+        },
+      },
       colors: {
         'valencia': {
           '50': '#fdf3f4',
@@ -20,17 +35,17 @@ module.exports = {
           '950': '#400f12',
         },
         'primary': {
-          '50': '#fef2f2',
-          '100': '#fee2e2',
-          '200': '#fecacb',
-          '300': '#fcabac', // main colour
-          '400': '#f87173',
-          '500': '#ef4446',
-          '600': '#dc2628',
-          '700': '#b91c1e',
-          '800': '#991b1d',
-          '900': '#7f1d1e',
-          '950': '#450a0b',
+          '50': '#f9f5ed',
+          '100': '#f0e6d1',
+          '200': '#e2cda6',
+          '300': '#d2ac72',
+          '400': '#c9995c',
+          '500': '#b47b3e',
+          '600': '#9b6033',
+          '700': '#7c482c',
+          '800': '#693c2a',
+          '900': '#5a3429',
+          '950': '#341a14',
         },
         'secondary': {
           '50': '#f7f4fe',

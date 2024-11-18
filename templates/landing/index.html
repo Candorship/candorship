@@ -3,4 +3,147 @@
 
 {% block content %}
 
+    {% include 'landing/nav.html' %}
+
+    <!-- Platform Section -->
+    <div class="flex flex-col gap-y-16 mx-auto px-4 sm:px-6 lg:px-20 pt-16 pb-20">
+        <div class="flex flex-col gap-y-4">
+            <div class="text-sm text-gray-600 font-merriweather">Meet Candorship</div>
+
+            <h1 class="text-5xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight flex flex-wrap font-merriweather">
+                <span class="mr-3">Chart the course.</span>
+                <span class="text-primary-800">Share the journey.</span>
+            </h1>
+            <img class="mt-6 w-96" src="/static/img/people-team.png">
+            <p class="text-lg text-gray-600 font-medium">Candorship helps you build radically open organizations and communities.</p>
+        </div>
+
+        <div class="flex flex-col gap-y-4">
+            <div class="text-sm font-medium text-gray-600 font-merriweather">Here To Help You Be Open</div>
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 justify-center">
+                <!-- Goals and OKRs -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-100 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Goals and OKRs</h3>
+                    </div>
+                    <p class="text-xl text-gray-900 font-medium mb-6">Set and track objectives transparently</p>
+                    <a href="#goals" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
+                        See Goals
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Open Scoreboard -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-yellow-100 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Open Scoreboard</h3>
+                    </div>
+                    <p class="text-xl text-gray-900 font-medium mb-6">Monitor and share key metrics openly</p>
+                    <a href="#scoreboard" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
+                        See Scoreboard
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Proposals and Feedback -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-100 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                            </svg>
+                        </div>
+                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Proposals and Feedback</h3>
+                    </div>
+                    <p class="text-xl text-gray-900 font-medium mb-6">Gather and organize feedback that drives decisions</p>
+                    <a href="#proposals" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
+                        See Proposals and Decisions
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Progress Updates -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Progress Updates</h3>
+                    </div>
+                    <p class="text-xl text-gray-900 font-medium mb-6">Keep everyone aligned with regular updates</p>
+                    <a href="#progress" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
+                        See Updates
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Public Roadmap -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary-100 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Public Roadmap</h3>
+                    </div>
+                    <p class="text-xl text-gray-900 font-medium mb-6">Share what's coming up by on your product roadmap publicly</p>
+                    <a href="#roadmap" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
+                        See the Roadmap
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="bg-primary-200 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <blockquote class="text-black">
+                <div class="text-center">
+                    <img class="w-96 m-auto" src="/static/img/people-working-with.png">
+                </div>
+                <p class="mt-8 text-2xl md:text-2xl font-medium leading-relaxed mb-8 font-merriweather">
+                    "Radical transparency forces issues to the surface—most
+                    importantly (and most uncomfortably) the problems that
+                    people are dealing with and how they're dealing with
+                    them—and it allows the organization to draw on the talents
+                    and insights of all its members to solve them."
+                </p>
+                <footer class="text-gray-800 text-xl font-merriweather">
+                    — Ray Dalio
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+
+    {% include 'landing/demos.html' %}
+
+    {% include 'landing/footer.html' %}
+
 {% endblock %}

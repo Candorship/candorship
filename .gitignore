@@ -31,3 +31,5 @@ media/
 
 # Editor
 .vscode
+pyrightconfig.json
+fabfile.py

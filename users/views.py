@@ -1,4 +1,5 @@
 from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
@@ -23,3 +24,8 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('/')
+
+
+@login_required
+def create_organization(request):
+    return render(request, 'users/create_organization.html')
