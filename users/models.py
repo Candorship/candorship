@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser, UserManager
-from django.db import models
+from django.db import IntegrityError, models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 from db.models import BaseModel, CreatedUpdatedMixin
 
@@ -33,6 +35,18 @@ class User(AbstractUser, CreatedUpdatedMixin):
         return f'{self.first_name} {self.last_name}'
 
 
+class ExternalProfile(CreatedUpdatedMixin, BaseModel):
+    google_access_token = models.CharField(max_length=100, blank=True, null=True)
+    google_refresh_token = models.CharField(max_length=100, blank=True, null=True)
+    google_token_uri = models.CharField(max_length=255, blank=True, null=True)
+    google_scopes = models.CharField(max_length=255, blank=True, null=True)
+    google_enabled = models.BooleanField(default=False)
+
+    user = models.OneToOneField(
+        'users.User', on_delete=models.CASCADE, related_name='external_profile'
+    )
+
+
 class OrganizationUser(models.Model):
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -41,3 +55,12 @@ class OrganizationUser(models.Model):
 
     class Meta:
         unique_together = ('organization', 'user')
+
+
+@receiver(post_save, sender=User)
+def create_external_profile(sender, instance, created, **kwargs):
+    if created:
+        try:
+            ExternalProfile.objects.create(user=instance)
+        except IntegrityError:
+            pass
