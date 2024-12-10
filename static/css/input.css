@@ -1,3 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: var(--color-gray-200, currentColor);
+    }
+
+    button {
+        border-color: var(--color-gray-200, currentColor);
+        cursor: pointer;
+    }
+}
+
+@theme {
+    --font-serif: "Merriweather", "sans-serif";
+
+    --color-background: #FFFCFA;
+
+    --color-regal-50: #f3f6fc;
+    --color-regal-100: #e6edf8;
+    --color-regal-200: #c8daef;
+    --color-regal-300: #97bae2;
+    --color-regal-400: #5f96d1;
+    --color-regal-500: #3b79bc;
+    --color-regal-600: #2a5f9f;
+    --color-regal-700: #234c81;
+    --color-regal-800: #22446f; /* primary */
+    --color-regal-900: #20395a;
+    --color-regal-950: #15243c;
+
+    --color-azalea-50: #fcf3f7;
+    --color-azalea-100: #fbe8f1;
+    --color-azalea-200: #f7c6dc; /* primary */
+    --color-azalea-300: #f5accb;
+    --color-azalea-400: #ed79a8;
+    --color-azalea-500: #e35188;
+    --color-azalea-600: #d13165;
+    --color-azalea-700: #b5214d;
+    --color-azalea-800: #961e40;
+    --color-azalea-900: #7d1e39;
+    --color-azalea-950: #4c0b1d;
+
+    --color-orange-50: #fef4f2;
+    --color-orange-100: #ffe5e1;
+    --color-orange-200: #ffd0c8;
+    --color-orange-300: #ffb0a2;
+    --color-orange-400: #fd816c;
+    --color-orange-500: #f5593e;
+    --color-orange-600: #e54f35; /* primary */
+    --color-orange-700: #be3017;
+    --color-orange-800: #9d2b17;
+    --color-orange-900: #82291a;
+    --color-orange-950: #471108;
+}
