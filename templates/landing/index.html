@@ -6,26 +6,26 @@
     {% include 'landing/nav.html' %}
 
     <!-- Platform Section -->
-    <div class="flex flex-col gap-y-16 mx-auto px-4 sm:px-6 lg:px-20 pt-16 pb-20">
+    <div class="flex flex-col gap-y-16 mx-auto px-4 sm:px-6 lg:px-20 lg:pt-16 pb-20">
 
-        <div class="grid grid-cols-2 pt-10 pb-20">
-            <div class="text-regal-800">
+        <div class="grid lg:grid-cols-2 grid-cols-1 pt-10 pb-20">
+            <div class="pt-4 order-2 lg:order-1 text-regal-800">
                 <div>
-                    <h1 class="text-6xl font-bold"><span class="text-orange-700">Chart</span> the course.<br />Share the <span class="text-orange-700">journey</span>.</h1>
-                    <p class="mt-4 text-lg">Candorship helps you build radically open organizations and communities.</p>
+                    <h1 class="text-7xl font-bold font-serif"><span class="text-orange-700">Chart</span> the course.<br />Share the <span class="text-orange-700">journey</span>.</h1>
+                    <p class="mt-4 text-3xl">Candorship helps you build radically open organizations and communities.</p>
                 </div>
                 <div class="mt-12">
                     <a class="uppercase px-3 py-2 shadow-sm shadow-azalea-200 rounded-2xl bg-azalea-200 border border-regal-700" href="">Learn More</a>
                 </div>
             </div>
 
-            <div class="flex justify-center">
-                <img class="" src="/static/img/people-team.png"></a>
+            <div class="order-1 lg:order-2 flex justify-center">
+                <img class="w-full" src="/static/img/landing/hero.png"></a>
             </div>
         </div>
     </div>
     <div class="w-full py-3 bg-orange-600">
-        <div class="flex flex-row justify-evenly text-2xl text-slate-100">
+        <div class="flex flex-row justify-evenly text-3xl text-slate-100 font-serif">
             <p>Openess by default</p>
             <p>No anonymity</p>
             <p>Community</p>
@@ -36,20 +36,24 @@
 
     <div class="flex flex-col gap-y-16 mx-auto px-4 sm:px-6 lg:px-20 pt-16 pb-20">
         <div class="flex flex-col gap-y-4">
-            <div class="text-3xl text-orange-700 text-center font-bold font-merriweather pb-10">Here To Help You Be Open</div>
+            <div class="text-5xl text-orange-700 text-center font-bold font-serif pb-10">
+                <h4>Here To Help You Be Open</h4>
+                <p class="mt-4 text-sm">(handdrawn lines go here)</p>
+            </div>
 
+            <!-- Feature Grid -->
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 justify-center">
                 <!-- Goals and OKRs -->
-                <div class="bg-gray-50 rounded-xl p-8">
-                    <div class="flex items-center mb-6">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-2">
                         <div class="bg-green-100 p-2 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                             </svg>
                         </div>
-                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Goals and OKRs</h3>
+                        <h3 class="ml-3 text-2xl font-semibold text-gray-900 font-serif">Goals and OKRs</h3>
                     </div>
-                    <p class="text-xl text-gray-900 font-medium mb-6">Set and track objectives transparently</p>
+                    <p class="text-lg text-gray-900 mb-4">Set and track objectives transparently</p>
                     <a href="#goals" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
                         See Goals
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -59,16 +63,16 @@
                 </div>
 
                 <!-- Open Scoreboard -->
-                <div class="bg-gray-50 rounded-xl p-8">
-                    <div class="flex items-center mb-6">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-2">
                         <div class="bg-yellow-100 p-2 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                         </div>
-                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Open Scoreboard</h3>
+                        <h3 class="ml-3 text-2xl font-semibold text-gray-900 font-serif">Open Scoreboard</h3>
                     </div>
-                    <p class="text-xl text-gray-900 font-medium mb-6">Monitor and share key metrics openly</p>
+                    <p class="text-lg text-gray-900 mb-4">Monitor and share key metrics openly</p>
                     <a href="#scoreboard" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
                         See Scoreboard
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -79,16 +83,16 @@
             </div>
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Proposals and Feedback -->
-                <div class="bg-gray-50 rounded-xl p-8">
-                    <div class="flex items-center mb-6">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-2">
                         <div class="bg-purple-100 p-2 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                             </svg>
                         </div>
-                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Proposals and Feedback</h3>
+                        <h3 class="ml-3 text-2xl font-semibold text-gray-900 font-serif">Proposals and Feedback</h3>
                     </div>
-                    <p class="text-xl text-gray-900 font-medium mb-6">Gather and organize feedback that drives decisions</p>
+                    <p class="text-lg text-gray-900 mb-4">Gather and organize feedback that drives decisions</p>
                     <a href="#proposals" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
                         See Proposals and Decisions
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -98,16 +102,16 @@
                 </div>
 
                 <!-- Progress Updates -->
-                <div class="bg-gray-50 rounded-xl p-8">
-                    <div class="flex items-center mb-6">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-2">
                         <div class="bg-blue-100 p-2 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Progress Updates</h3>
+                        <h3 class="ml-3 text-2xl font-semibold text-gray-900 font-serif">Progress Updates</h3>
                     </div>
-                    <p class="text-xl text-gray-900 font-medium mb-6">Keep everyone aligned with regular updates</p>
+                    <p class="text-lg text-gray-900 mb-4">Keep everyone aligned with regular updates</p>
                     <a href="#progress" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
                         See Updates
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -117,16 +121,16 @@
                 </div>
 
                 <!-- Public Roadmap -->
-                <div class="bg-gray-50 rounded-xl p-8">
-                    <div class="flex items-center mb-6">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-2">
                         <div class="bg-primary-100 p-2 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                         </div>
-                        <h3 class="ml-3 text-xl font-semibold text-gray-900 font-merriweather">Public Roadmap</h3>
+                        <h3 class="ml-3 text-2xl font-semibold text-gray-900 font-serif">Public Roadmap</h3>
                     </div>
-                    <p class="text-xl text-gray-900 font-medium mb-6">Share what's coming up by on your product roadmap publicly</p>
+                    <p class="text-lg text-gray-900 mb-4">Share what's coming up by on your product roadmap publicly</p>
                     <a href="#roadmap" class="text-primary-700 font-medium hover:text-primary-600 flex items-center">
                         See the Roadmap
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -139,20 +143,20 @@
     </div>
 
     <!-- Quote Section -->
-    <div class="bg-primary-200 py-16">
+    <div class="bg-azalea-200 py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <blockquote class="text-black">
+            <blockquote class="text-regal-800">
                 <div class="text-center">
                     <img class="w-96 m-auto" src="/static/img/people-working-with.png">
                 </div>
-                <p class="mt-8 text-2xl md:text-2xl font-medium leading-relaxed mb-8 font-merriweather">
+                <p class="mt-8 text-2xl md:text-3xl font-medium leading-relaxed mb-8 font-serif">
                     "Radical transparency forces issues to the surface—most
                     importantly (and most uncomfortably) the problems that
                     people are dealing with and how they're dealing with
                     them—and it allows the organization to draw on the talents
                     and insights of all its members to solve them."
                 </p>
-                <footer class="text-gray-800 text-xl font-merriweather">
+                <footer class="text-regal-800 text-2xl font-serif">
                     — Ray Dalio
                 </footer>
             </blockquote>
