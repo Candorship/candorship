@@ -16,7 +16,8 @@
 }
 
 @theme {
-    --font-serif: "Gentium Book Plus", "sans-serif";
+    --font-serif: "Young Serif", "serif";
+    --font-display: "Bricolage Grotesque", "sans-serif";
 
     --color-background: #FFFCFA;
 
