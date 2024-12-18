@@ -1,396 +1,411 @@
-<!-- Goals and OKRs Section -->
-    <div id="goals" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
-        <h2 class="text-4xl font-bold text-regal-800 font-serif">Goals and OKRs</h2>
-        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="order-2 lg:order-1">
-                <p class="text-2xl text-gray-800 mb-8">Set transparent goals and track progress openly across your organization.</p>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-azalea-200 p-4 rounded-lg">
-                        <div class="text-2xl mb-2 font-serif underline decoration-orange-600">Objectives</div>
-                        <p class="text-gray-900 text-lg">Set clear organizational and team objectives that everyone can see and align with.</p>
-                    </div>
-                    <div class="bg-azalea-200 p-4 rounded-lg">
-                        <div class="text-2xl mb-2 font-serif underline decoration-orange-600">Key Results</div>
-                        <p class="text-gray-900 text-lg">Track measurable outcomes that show progress towards objectives.</p>
-                    </div>
+<!-- Roadmap Demo Section -->
+<div id="roadmap" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
+    <h2 class="text-4xl font-bold text-regal-800 font-serif">Public Roadmap</h2>
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Left Column - Description -->
+        <div>
+            <p class="text-2xl text-gray-800 mb-8">
+                Share your vision and build trust by making your product
+                roadmap public.
+            </p>
+            <p class="text-2xl text-gray-800 mb-8">
+                Let your users and members see
+                what's shipped, what's being built, and what's planned.
+            </p>
+            <p class="text-lg text-gray-800 mb-8">
+                <a href="{% url 'roadmap:roadmap' %}" class="text-orange-600 hover:text-orange-700 font-semibold">View Candorship's Roadmap →</a>
+            </p>
+
+            <!-- Legend for roadmap -->
+            <div class="space-y-6">
+                <div class="flex items-center">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mr-3">Shipped</span>
+                    <span class="text-gray-600">Released and available to users</span>
                 </div>
-                <!-- Integration information -->
-                <div class="mt-8 space-y-6">
-                    <div class="flex items-center">
-                        <div class="bg-gray-100 p-2 rounded-lg">
-                            <svg class="h-6 w-6 text-gray-600" viewBox="0 0 2447.6 2452.5" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-rule="evenodd" fill-rule="evenodd">
-                                    <path d="M897.4 0C762.1.1 652.6 109.9 652.7 245.2c-.1 135.3 109.4 245.1 244.7 245.2h244.7V245.2C1142.1 109.9 1032.7.1 897.4 0c.1 0 .1 0 0 0m0 654H244.8C109.5 654.1.1 763.9 0 899.2c-.1 135.3 109.4 245.1 244.7 245.2h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.8-245.2z" fill="currentColor"/>
-                                    <path d="M2447.6 899.2c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2v245.2h244.8c135.3-.1 244.7-109.9 244.7-245.2zm-652.7 0v-654C1795 109.9 1685.5.1 1550.2 0c-135.3.1-244.8 109.9-244.8 245.2v654c-.1 135.2 109.4 245 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2z" fill="currentColor"/>
-                                    <path d="M1550.1 2452.5c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-244.8v245.2c-.1 135.2 109.4 245 244.7 245.2zm0-654.1h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-652.7c-135.3.1-244.7 109.9-244.8 245.2-.1 135.3 109.4 245.1 244.7 245.2z" fill="currentColor"/>
-                                    <path d="M0 1553.2c-.1 135.3 109.4 245.1 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2V1308H244.7C109.5 1308.1.1 1417.9 0 1553.2zm652.7 0v654c-.2 135.3 109.3 245.1 244.6 245.3 135.6-.1 245.1-109.9 245.2-245.2v-653.9c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2z" fill="currentColor"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="ml-3">
-                            <span class="text-gray-900 text-xl font-medium">Slack Integration</span>
-                            <p class="text-gray-600">Automatically update progress from Slack</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="bg-gray-100 p-2 rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg>
-                        </div>
-                        <div class="ml-3">
-                            <span class="text-gray-900 text-xl font-medium">RESTful API</span>
-                            <p class="text-gray-600">Update goals from anywhere through our API</p>
-                        </div>
-                    </div>
+                <div class="flex items-center">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mr-3">In Progress</span>
+                    <span class="text-gray-600">Currently in development</span>
                 </div>
-            </div>
-
-            <div class="order-1 lg:order-2">
-                <img src="static/img/landing/okrs.png">
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Open Scoreboard Section -->
-    <div id="scoreboard" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
-        <h2 class="text-4xl font-bold text-regal-800 font-serif">Open Scoreboard</h2>
-        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-                <p class="text-2xl text-gray-800 mb-8">Track and share key metrics with the entire organization or community.</p>
-
-                <div class="mt-8 grid grid-cols-2 gap-6">
-                    <div class="bg-azalea-200 p-4 rounded-lg">
-                        <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Key Metrics</div>
-                        <p class="text-gray-900 text-lg">Monitor crucial business and team performance indicators in real-time.</p>
-                    </div>
-                    <div class="bg-azalea-200 p-4 rounded-lg">
-                        <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Transparency</div>
-                        <p class="text-gray-900 text-lg">Build trust by sharing progress and results with all stakeholders.</p>
-                    </div>
-                </div>
-
-                <!-- Integration information -->
-                <div class="mt-8 space-y-6">
-                    <div class="flex items-center">
-                        <div class="bg-gray-100 p-2 rounded-lg">
-                            <svg class="h-6 w-6 text-gray-600" viewBox="0 0 2447.6 2452.5" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-rule="evenodd" fill-rule="evenodd">
-                                    <path d="M897.4 0C762.1.1 652.6 109.9 652.7 245.2c-.1 135.3 109.4 245.1 244.7 245.2h244.7V245.2C1142.1 109.9 1032.7.1 897.4 0c.1 0 .1 0 0 0m0 654H244.8C109.5 654.1.1 763.9 0 899.2c-.1 135.3 109.4 245.1 244.7 245.2h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.8-245.2z" fill="currentColor"/>
-                                    <path d="M2447.6 899.2c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2v245.2h244.8c135.3-.1 244.7-109.9 244.7-245.2zm-652.7 0v-654C1795 109.9 1685.5.1 1550.2 0c-135.3.1-244.8 109.9-244.8 245.2v654c-.1 135.2 109.4 245 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2z" fill="currentColor"/>
-                                    <path d="M1550.1 2452.5c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-244.8v245.2c-.1 135.2 109.4 245 244.7 245.2zm0-654.1h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-652.7c-135.3.1-244.7 109.9-244.8 245.2-.1 135.3 109.4 245.1 244.7 245.2z" fill="currentColor"/>
-                                    <path d="M0 1553.2c-.1 135.3 109.4 245.1 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2V1308H244.7C109.5 1308.1.1 1417.9 0 1553.2zm652.7 0v654c-.2 135.3 109.3 245.1 244.6 245.3 135.6-.1 245.1-109.9 245.2-245.2v-653.9c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2z" fill="currentColor"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="ml-3">
-                            <span class="text-gray-900 text-xl font-medium">Slack Integration</span>
-                            <p class="text-gray-600">Automatically update metrics from Slack</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="bg-gray-100 p-2 rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg>
-                        </div>
-                        <div class="ml-3">
-                            <span class="text-gray-900 text-xl font-medium">RESTful API</span>
-                            <p class="text-gray-600">Update metrics from anywhere through our API</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="bg-orange-600 rounded-3xl p-6 shadow-sm flex items-center">
-                <div class="w-full h-full space-y-6">
-                    <div class="h-full grid grid-cols-2 gap-6">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <div class="text-gray-500 mb-1">Monthly Active Users</div>
-                            <div class="mt-4 text-3xl font-bold">24,582</div>
-                            <div class="text-green-600 text-lg">↑ 12.3%</div>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <div class="text-sm text-gray-500 mb-1">Customer Satisfaction</div>
-                            <div class="mt-4 text-3xl font-bold">94.8%</div>
-                            <div class="text-green-600 text-lg">↑ 2.1%</div>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <div class="text-sm text-gray-500 mb-1">Revenue MRR</div>
-                            <div class="mt-4 text-3xl font-bold">$86.5k</div>
-                            <div class="text-yellow-600 text-lg">↑ 2.4%</div>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <div class="text-sm text-gray-500 mb-1">New Bug Tickets</div>
-                            <div class="mt-4 text-3xl font-bold">3 tickets</div>
-                            <div class="text-green-600 text-lg">↓ 50%</div>
-                        </div>
-                    </div>
+                <div class="flex items-center">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 mr-3">Planned</span>
+                    <span class="text-gray-600">Coming up in our roadmap</span>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Proposals, Decisions, and Feedback Section -->
-    <div id="proposals" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100" x-data="{
-            activeTab: 'organization',
-            organizationDescription: 'Let your staff share new proposals and collect feedback from others before decisions are made.',
-            openSourceDescription: 'Never lose track of crucial community feedback on GitHub issues. Share key updates with your contributors.',
-            communityDescription: 'Involve your community members in key discussions, and let them propose changes they would like to see.',
-            organizationFeedback: [
-                { type: 'Proposal', label: 'bg-yellow-100 text-yellow-800', title: 'New Branding Guidelines', comments: 32 },
-                { type: 'RFC', label: 'bg-green-100 text-green-800', title: 'Enhancements to Health Insurance', comments: 50 },
-                { type: 'Decision Made', label: 'bg-purple-100 text-purple-800', title: 'Changes to remote work policy', comments: 24 }
-            ],
-            openSourceFeedback: [
-                { type: 'Proposal', label: 'bg-yellow-100 text-yellow-800', title: 'New Plugin Architecture', comments: 45 },
-                { type: 'RFC', label: 'bg-green-100 text-green-800', title: 'Moving to GitLab', comments: 128 },
-                { type: 'Decision Made', label: 'bg-purple-100 text-purple-800', title: 'Support for Lua and Python scripts', comments: 67 }
-            ],
-            communityFeedback: [
-                { type: 'Proposal', label: 'bg-yellow-100 text-yellow-800', title: 'Move forum to Discourse', comments: 25 },
-                { type: 'RFC', label: 'bg-green-100 text-green-800', title: 'Updated Moderation Guidelines', comments: 128 },
-                { type: 'Decision Made', label: 'bg-purple-100 text-purple-800', title: 'New Membership Fees for 2025', comments: 67 }
-            ],
-            getSelection() {
-                if (this.activeTab === 'organization') {
-                    return this.organizationFeedback;
-                }
-                else if (this.activeTab === 'opensource') {
-                    return this.openSourceFeedback;
-                }
-                else {
-                    return this.communityFeedback;
-                }
-            }
-        }">
-        <h2 class="text-4xl font-bold text-regal-800 font-serif">Proposals, Decisions, and Feedback</h2>
-        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <!-- Left Column - Description (was right column) -->
-            <div class="">
-                <p class="text-2xl text-gray-800 mb-8" x-text="activeTab === 'organization' ? organizationDescription : (activeTab === 'opensource' ? openSourceDescription : communityDescription) ">
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                    <div class="bg-azalea-200 p-4 rounded-lg">
-                        <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Proposals</div>
-                        <p class="text-gray-900 text-lg">Let members propose, discuss changes and enhancements they would like to see.</p>
-                    </div>
-                    <div class="bg-azalea-200 p-4 rounded-lg">
-                        <div class="text-3xl mb-2 font-serif underline decoration-orange-600">RFCs</div>
-                        <p class="text-gray-900 text-lg">Collect feedback from others (RFCs: Request for Comments) before making decisions.</p>
-                    </div>
-                    <div class="bg-azalea-200 p-4 rounded-lg">
-                        <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Decisions</div>
-                        <p class="text-gray-900 text-lg">Share decisions once they are made.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column - Mini Feedback Board -->
-            <div class="bg-orange-600 rounded-3xl p-6 shadow-sm">
-                <div class="bg-white p-6 rounded-3xl">
-                    <p class="text-gray-800 text-sm">See examples for your organization</p>
-                    <div class="mt-4 mb-6 flex space-x-1 rounded-lg bg-gray-200 p-1">
-                        <button
-                            @click="activeTab = 'organization'"
-                            :class="activeTab === 'organization' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
-                            class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
-                            Company
-                        </button>
-                        <button
-                            @click="activeTab = 'community'"
-                            :class="activeTab === 'community' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
-                            class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
-                            Community
-                        </button>
-                        <button
-                            @click="activeTab = 'opensource'"
-                            :class="activeTab === 'opensource' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
-                            class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
-                            Open Source Project
-                        </button>
-                    </div>
-
-                    <div class="space-y-6">
-                        <template x-for="item in getSelection" :key="item.title">
-                            <div class="flex items-center gap-4 pb-4 border-b">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-center" :class="item.label" x-text="item.type"></span>
-                                <h4 class="font-medium" x-text="item.title"></h4>
-                                <div class="ml-auto flex items-center text-gray-500">
-                                    <span x-text="item.comments"></span>
-                                    <template x-if="item.type !== 'Decision Made'">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                        </svg>
-                                    </template>
-                                    <template x-if="item.type === 'Decision Made'">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-                                        </svg>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Progress Updates Section -->
-    <div id="progress" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
-        <h2 class="text-4xl font-bold text-regal-800 font-serif">Progress Updates</h2>
-        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <!-- Left Column - Description -->
-            <div>
-                <p class="text-2xl text-gray-800 mb-8">Keep your team in the loop with regular updates about your product development journey.</p>
-
-                <!-- Integration information -->
-                <div class="space-y-6">
-                    <div class="flex items-center">
-                        <div class="bg-gray-100 p-2 rounded-lg">
-                            <svg class="h-6 w-6 text-gray-600" viewBox="0 0 2447.6 2452.5" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-rule="evenodd" fill-rule="evenodd">
-                                    <path d="M897.4 0C762.1.1 652.6 109.9 652.7 245.2c-.1 135.3 109.4 245.1 244.7 245.2h244.7V245.2C1142.1 109.9 1032.7.1 897.4 0c.1 0 .1 0 0 0m0 654H244.8C109.5 654.1.1 763.9 0 899.2c-.1 135.3 109.4 245.1 244.7 245.2h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.8-245.2z" fill="currentColor"/>
-                                    <path d="M2447.6 899.2c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2v245.2h244.8c135.3-.1 244.7-109.9 244.7-245.2zm-652.7 0v-654C1795 109.9 1685.5.1 1550.2 0c-135.3.1-244.8 109.9-244.8 245.2v654c-.1 135.2 109.4 245 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2z" fill="currentColor"/>
-                                    <path d="M1550.1 2452.5c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-244.8v245.2c-.1 135.2 109.4 245 244.7 245.2zm0-654.1h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-652.7c-135.3.1-244.7 109.9-244.8 245.2-.1 135.3 109.4 245.1 244.7 245.2z" fill="currentColor"/>
-                                    <path d="M0 1553.2c-.1 135.3 109.4 245.1 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2V1308H244.7C109.5 1308.1.1 1417.9 0 1553.2zm652.7 0v654c-.2 135.3 109.3 245.1 244.6 245.3 135.6-.1 245.1-109.9 245.2-245.2v-653.9c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2z" fill="currentColor"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="ml-3">
-                            <span class="text-gray-900 text-xl font-medium">Slack Integration</span>
-                            <p class="text-gray-600">Automatically sync key updates from Slack channels</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="bg-gray-100 p-2 rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm3.163 21.783h-.093a.513.513 0 0 1-.382-.14.513.513 0 0 1-.14-.372v-1.406c.006-.467.01-.94.01-1.416a3.692 3.692 0 0 0-.151-1.028 1.832 1.832 0 0 0-.542-.875 8.014 8.014 0 0 0 2.038-.471 4.051 4.051 0 0 0 1.466-.964c.407-.427.71-.943.885-1.506a6.77 6.77 0 0 0 .3-2.13 4.138 4.138 0 0 0-.26-1.476 3.892 3.892 0 0 0-.795-1.284 2.81 2.81 0 0 0 .162-.582c.033-.2.05-.402.05-.604 0-.26-.03-.52-.09-.773a5.309 5.309 0 0 0-.221-.763.293.293 0 0 0-.111-.02h-.11c-.23.002-.456.04-.674.111a5.34 5.34 0 0 0-.703.26 6.503 6.503 0 0 0-.661.343c-.215.127-.405.249-.573.362a9.578 9.578 0 0 0-5.143 0 13.507 13.507 0 0 0-.572-.362 6.022 6.022 0 0 0-.672-.342 4.516 4.516 0 0 0-.705-.261 2.203 2.203 0 0 0-.662-.111h-.11a.29.29 0 0 0-.11.02 5.844 5.844 0 0 0-.23.763c-.054.254-.08.513-.081.773 0 .202.017.404.051.604.033.199.086.394.16.582A3.888 3.888 0 0 0 5.702 10a4.142 4.142 0 0 0-.263 1.476 6.871 6.871 0 0 0 .292 2.12c.181.563.483 1.08.884 1.516.415.422.915.75 1.466.964.653.25 1.337.41 2.033.476a1.828 1.828 0 0 0-.452.633 2.99 2.99 0 0 0-.2.744 2.754 2.754 0 0 1-1.175.27 1.788 1.788 0 0 1-1.065-.3 2.904 2.904 0 0 1-.752-.824 3.098 3.098 0 0 0-.292-.382 2.692 2.692 0 0 0-.372-.343 1.842 1.842 0 0 0-.432-.24 1.201 1.201 0 0 0-.481-.101c-.04.001-.08.005-.12.01a.649.649 0 0 0-.162.02.408.408 0 0 0-.13.06.116.116 0 0 0-.06.1.33.33 0 0 0 .14.242c.093.074.17.131.232.171l.03.021c.133.103.261.214.382.333.112.098.213.209.3.33.09.119.168.246.231.381.073.134.15.288.231.463.188.474.522.875.954 1.145.453.243.961.364 1.476.351.174 0 .349-.01.522-.03.172-.028.343-.057.515-.091v1.743a.5.5 0 0 1-.533.521h-.062a10.286 10.286 0 1 1 6.324 0v.005z"/>
-                            </svg>
-                        </div>
-                        <div class="ml-3">
-                            <span class="text-gray-900 text-xl font-medium">GitHub Integration</span>
-                            <p class="text-gray-600">Pull in issues, PRs, and discussions from GitHub repositories</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="bg-gray-100 p-2 rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg>
-                        </div>
-                        <div class="ml-3">
-                            <span class="text-gray-900 text-xl font-medium">RESTful API</span>
-                            <p class="text-gray-600">Send updates from anywhere through our API</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Right Column - Update Preview -->
-            <div class="bg-orange-600 p-6 rounded-3xl">
-                <div class="bg-white rounded-3xl p-8 shadow-sm">
-                    <div class="space-y-8">
-                        <div class="border-b pb-6">
-                            <div class="flex items-center mb-4">
-                                <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center">
-                                    <span class="text-primary-600 font-semibold">CS</span>
-                                </div>
-                                <div class="ml-4">
-                                    <div class="font-medium">Mobile App Team</div>
-                                    <div class="text-sm text-gray-500">Yesterday at 4:30 PM</div>
-                                </div>
-                            </div>
-                            <h4 class="font-semibold text-lg mb-2">Mobile App Beta Launch 🚀</h4>
-                            <p class="text-gray-600">We're excited to announce the beta release of our mobile app! Try it now and report any bugs that you see.</p>
+        <!-- Right Column - Mini Roadmap -->
+        <div class="bg-orange-600 rounded-3xl p-6 shadow-sm">
+            <div class="space-y-6 bg-white rounded-3xl p-6">
+                <div class="border-l-4 border-orange-500 pl-4 py-2">
+                    <div class="text-sm font-semibold text-gray-500 mb-4">Q4 2023</div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mb-2">In Progress</span>
+                            <h4 class="font-medium">Mobile App Beta Release</h4>
+                            <p class="text-sm text-gray-600">Access your workspace on iOS and Android devices</p>
                         </div>
                         <div>
-                            <div class="flex items-center mb-4">
-                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                                    <span class="text-blue-600 font-semibold">CS</span>
-                                </div>
-                                <div class="ml-4">
-                                    <div class="font-medium">Data & Analytics Team</div>
-                                    <div class="text-sm text-gray-500">2 days ago</div>
-                                </div>
-                            </div>
-                            <h4 class="font-semibold text-lg mb-2">New Analytics Features</h4>
-                            <p class="text-gray-600">The long awaited analytics tools are now ready! Setup your dashboards before the upcoming seasonal sale.</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 mb-2">Shipped</span>
+                            <h4 class="font-medium">Share Files with Others</h4>
+                            <p class="text-sm text-gray-600">Now you can share files securely with people outside of your organization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-l-4 border-gray-300 pl-4 py-2">
+                    <div class="text-sm font-semibold text-gray-500 mb-4">Q1 2024</div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 mb-2">Planned</span>
+                            <h4 class="font-medium">Team Collaboration Features</h4>
+                            <p class="text-sm text-gray-600">Real-time editing and commenting capabilities</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Roadmap Demo Section -->
-    <div id="roadmap" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
-        <h2 class="text-4xl font-bold text-regal-800 font-serif">Public Roadmap</h2>
-        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <!-- Left Column - Description -->
-            <div>
-                <p class="text-2xl text-gray-800 mb-8">
-                    Share your vision and build trust by making your product
-                    roadmap public.
-                </p>
-                <p class="text-2xl text-gray-800 mb-8">
-                    Let your users and members see
-                    what's shipped, what's being built, and what's planned.
-                </p>
+<!-- Progress Updates Section - Q2 2025 -->
+<div id="progress" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
+    <h2 class="text-4xl font-bold text-regal-800 font-serif">
+        Progress Updates
+        <span class="text-lg text-orange-600 ml-2">Coming Q2 2025</span>
+    </h2>
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Left Column - Description -->
+        <div>
+            <p class="text-2xl text-gray-800 mb-8">Keep your team in the loop with regular updates about your product development journey.</p>
 
-                <!-- Legend for roadmap -->
+            <!-- Integration information -->
+            <div class="space-y-6">
+                <div class="flex items-center">
+                    <div class="bg-gray-100 p-2 rounded-lg">
+                        <svg class="h-6 w-6 text-gray-600" viewBox="0 0 2447.6 2452.5" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-rule="evenodd" fill-rule="evenodd">
+                                <path d="M897.4 0C762.1.1 652.6 109.9 652.7 245.2c-.1 135.3 109.4 245.1 244.7 245.2h244.7V245.2C1142.1 109.9 1032.7.1 897.4 0c.1 0 .1 0 0 0m0 654H244.8C109.5 654.1.1 763.9 0 899.2c-.1 135.3 109.4 245.1 244.7 245.2h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.8-245.2z" fill="currentColor"/>
+                                <path d="M2447.6 899.2c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2v245.2h244.8c135.3-.1 244.7-109.9 244.7-245.2zm-652.7 0v-654C1795 109.9 1685.5.1 1550.2 0c-135.3.1-244.8 109.9-244.8 245.2v654c-.1 135.2 109.4 245 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2z" fill="currentColor"/>
+                                <path d="M1550.1 2452.5c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-244.8v245.2c-.1 135.2 109.4 245 244.7 245.2zm0-654.1h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-652.7c-135.3.1-244.7 109.9-244.8 245.2-.1 135.3 109.4 245.1 244.7 245.2z" fill="currentColor"/>
+                                <path d="M0 1553.2c-.1 135.3 109.4 245.1 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2V1308H244.7C109.5 1308.1.1 1417.9 0 1553.2zm652.7 0v654c-.2 135.3 109.3 245.1 244.6 245.3 135.6-.1 245.1-109.9 245.2-245.2v-653.9c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2z" fill="currentColor"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="text-gray-900 text-xl font-medium">Slack Integration</span>
+                        <p class="text-gray-600">Automatically sync key updates from Slack channels</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-gray-100 p-2 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm3.163 21.783h-.093a.513.513 0 0 1-.382-.14.513.513 0 0 1-.14-.372v-1.406c.006-.467.01-.94.01-1.416a3.692 3.692 0 0 0-.151-1.028 1.832 1.832 0 0 0-.542-.875 8.014 8.014 0 0 0 2.038-.471 4.051 4.051 0 0 0 1.466-.964c.407-.427.71-.943.885-1.506a6.77 6.77 0 0 0 .3-2.13 4.138 4.138 0 0 0-.26-1.476 3.892 3.892 0 0 0-.795-1.284 2.81 2.81 0 0 0 .162-.582c.033-.2.05-.402.05-.604 0-.26-.03-.52-.09-.773a5.309 5.309 0 0 0-.221-.763.293.293 0 0 0-.111-.02h-.11c-.23.002-.456.04-.674.111a5.34 5.34 0 0 0-.703.26 6.503 6.503 0 0 0-.661.343c-.215.127-.405.249-.573.362a9.578 9.578 0 0 0-5.143 0 13.507 13.507 0 0 0-.572-.362 6.022 6.022 0 0 0-.672-.342 4.516 4.516 0 0 0-.705-.261 2.203 2.203 0 0 0-.662-.111h-.11a.29.29 0 0 0-.11.02 5.844 5.844 0 0 0-.23.763c-.054.254-.08.513-.081.773 0 .202.017.404.051.604.033.199.086.394.16.582A3.888 3.888 0 0 0 5.702 10a4.142 4.142 0 0 0-.263 1.476 6.871 6.871 0 0 0 .292 2.12c.181.563.483 1.08.884 1.516.415.422.915.75 1.466.964.653.25 1.337.41 2.033.476a1.828 1.828 0 0 0-.452.633 2.99 2.99 0 0 0-.2.744 2.754 2.754 0 0 1-1.175.27 1.788 1.788 0 0 1-1.065-.3 2.904 2.904 0 0 1-.752-.824 3.098 3.098 0 0 0-.292-.382 2.692 2.692 0 0 0-.372-.343 1.842 1.842 0 0 0-.432-.24 1.201 1.201 0 0 0-.481-.101c-.04.001-.08.005-.12.01a.649.649 0 0 0-.162.02.408.408 0 0 0-.13.06.116.116 0 0 0-.06.1.33.33 0 0 0 .14.242c.093.074.17.131.232.171l.03.021c.133.103.261.214.382.333.112.098.213.209.3.33.09.119.168.246.231.381.073.134.15.288.231.463.188.474.522.875.954 1.145.453.243.961.364 1.476.351.174 0 .349-.01.522-.03.172-.028.343-.057.515-.091v1.743a.5.5 0 0 1-.533.521h-.062a10.286 10.286 0 1 1 6.324 0v.005z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="text-gray-900 text-xl font-medium">GitHub Integration</span>
+                        <p class="text-gray-600">Pull in issues, PRs, and discussions from GitHub repositories</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-gray-100 p-2 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="text-gray-900 text-xl font-medium">RESTful API</span>
+                        <p class="text-gray-600">Send updates from anywhere through our API</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Column - Update Preview -->
+        <div class="bg-orange-600 p-6 rounded-3xl">
+            <div class="bg-white rounded-3xl p-8 shadow-sm">
+                <div class="space-y-8">
+                    <div class="border-b pb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center">
+                                <span class="text-primary-600 font-semibold">CS</span>
+                            </div>
+                            <div class="ml-4">
+                                <div class="font-medium">Mobile App Team</div>
+                                <div class="text-sm text-gray-500">Yesterday at 4:30 PM</div>
+                            </div>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">Mobile App Beta Launch 🚀</h4>
+                        <p class="text-gray-600">We're excited to announce the beta release of our mobile app! Try it now and report any bugs that you see.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                <span class="text-blue-600 font-semibold">CS</span>
+                            </div>
+                            <div class="ml-4">
+                                <div class="font-medium">Data & Analytics Team</div>
+                                <div class="text-sm text-gray-500">2 days ago</div>
+                            </div>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">New Analytics Features</h4>
+                        <p class="text-gray-600">The long awaited analytics tools are now ready! Setup your dashboards before the upcoming seasonal sale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Proposals, Decisions, and Feedback Section - Q2 2025 -->
+<div id="proposals" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100" x-data="{
+        activeTab: 'organization',
+        organizationDescription: 'Let your staff share new proposals and collect feedback from others before decisions are made.',
+        openSourceDescription: 'Never lose track of crucial community feedback on GitHub issues. Share key updates with your contributors.',
+        communityDescription: 'Involve your community members in key discussions, and let them propose changes they would like to see.',
+        organizationFeedback: [
+            { type: 'Proposal', label: 'bg-yellow-100 text-yellow-800', title: 'New Branding Guidelines', comments: 32 },
+            { type: 'RFC', label: 'bg-green-100 text-green-800', title: 'Enhancements to Health Insurance', comments: 50 },
+            { type: 'Decision Made', label: 'bg-purple-100 text-purple-800', title: 'Changes to remote work policy', comments: 24 }
+        ],
+        openSourceFeedback: [
+            { type: 'Proposal', label: 'bg-yellow-100 text-yellow-800', title: 'New Plugin Architecture', comments: 45 },
+            { type: 'RFC', label: 'bg-green-100 text-green-800', title: 'Moving to GitLab', comments: 128 },
+            { type: 'Decision Made', label: 'bg-purple-100 text-purple-800', title: 'Support for Lua and Python scripts', comments: 67 }
+        ],
+        communityFeedback: [
+            { type: 'Proposal', label: 'bg-yellow-100 text-yellow-800', title: 'Move forum to Discourse', comments: 25 },
+            { type: 'RFC', label: 'bg-green-100 text-green-800', title: 'Updated Moderation Guidelines', comments: 128 },
+            { type: 'Decision Made', label: 'bg-purple-100 text-purple-800', title: 'New Membership Fees for 2025', comments: 67 }
+        ],
+        getSelection() {
+            if (this.activeTab === 'organization') {
+                return this.organizationFeedback;
+            }
+            else if (this.activeTab === 'opensource') {
+                return this.openSourceFeedback;
+            }
+            else {
+                return this.communityFeedback;
+            }
+        }
+    }">
+    <h2 class="text-4xl font-bold text-regal-800 font-serif">
+        Proposals, Decisions, and Feedback
+        <span class="text-lg text-orange-600 ml-2">Coming Q2 2025</span>
+    </h2>
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Left Column - Description (was right column) -->
+        <div class="">
+            <p class="text-2xl text-gray-800 mb-8" x-text="activeTab === 'organization' ? organizationDescription : (activeTab === 'opensource' ? openSourceDescription : communityDescription) ">
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <div class="bg-azalea-200 p-4 rounded-lg">
+                    <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Proposals</div>
+                    <p class="text-gray-900 text-lg">Let members propose, discuss changes and enhancements they would like to see.</p>
+                </div>
+                <div class="bg-azalea-200 p-4 rounded-lg">
+                    <div class="text-3xl mb-2 font-serif underline decoration-orange-600">RFCs</div>
+                    <p class="text-gray-900 text-lg">Collect feedback from others (RFCs: Request for Comments) before making decisions.</p>
+                </div>
+                <div class="bg-azalea-200 p-4 rounded-lg">
+                    <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Decisions</div>
+                    <p class="text-gray-900 text-lg">Share decisions once they are made.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Mini Feedback Board -->
+        <div class="bg-orange-600 rounded-3xl p-6 shadow-sm">
+            <div class="bg-white p-6 rounded-3xl">
+                <p class="text-gray-800 text-sm">See examples for your organization</p>
+                <div class="mt-4 mb-6 flex space-x-1 rounded-lg bg-gray-200 p-1">
+                    <button
+                        @click="activeTab = 'organization'"
+                        :class="activeTab === 'organization' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
+                        class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
+                        Company
+                    </button>
+                    <button
+                        @click="activeTab = 'community'"
+                        :class="activeTab === 'community' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
+                        class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
+                        Community
+                    </button>
+                    <button
+                        @click="activeTab = 'opensource'"
+                        :class="activeTab === 'opensource' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
+                        class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
+                        Open Source Project
+                    </button>
+                </div>
+
                 <div class="space-y-6">
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mr-3">Shipped</span>
-                        <span class="text-gray-600">Released and available to users</span>
+                    <template x-for="item in getSelection" :key="item.title">
+                        <div class="flex items-center gap-4 pb-4 border-b">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-center" :class="item.label" x-text="item.type"></span>
+                            <h4 class="font-medium" x-text="item.title"></h4>
+                            <div class="ml-auto flex items-center text-gray-500">
+                                <span x-text="item.comments"></span>
+                                <template x-if="item.type !== 'Decision Made'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                </template>
+                                <template x-if="item.type === 'Decision Made'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                                    </svg>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Goals and OKRs Section - Q3 2025 -->
+<div id="goals" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
+    <h2 class="text-4xl font-bold text-regal-800 font-serif">
+        Goals and OKRs
+        <span class="text-lg text-orange-600 ml-2">Coming Q3 2025</span>
+    </h2>
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1">
+            <p class="text-2xl text-gray-800 mb-8">Set transparent goals and track progress openly across your organization.</p>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-azalea-200 p-4 rounded-lg">
+                    <div class="text-2xl mb-2 font-serif underline decoration-orange-600">Objectives</div>
+                    <p class="text-gray-900 text-lg">Set clear organizational and team objectives that everyone can see and align with.</p>
+                </div>
+                <div class="bg-azalea-200 p-4 rounded-lg">
+                    <div class="text-2xl mb-2 font-serif underline decoration-orange-600">Key Results</div>
+                    <p class="text-gray-900 text-lg">Track measurable outcomes that show progress towards objectives.</p>
+                </div>
+            </div>
+            <!-- Integration information -->
+            <div class="mt-8 space-y-6">
+                <div class="flex items-center">
+                    <div class="bg-gray-100 p-2 rounded-lg">
+                        <svg class="h-6 w-6 text-gray-600" viewBox="0 0 2447.6 2452.5" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-rule="evenodd" fill-rule="evenodd">
+                                <path d="M897.4 0C762.1.1 652.6 109.9 652.7 245.2c-.1 135.3 109.4 245.1 244.7 245.2h244.7V245.2C1142.1 109.9 1032.7.1 897.4 0c.1 0 .1 0 0 0m0 654H244.8C109.5 654.1.1 763.9 0 899.2c-.1 135.3 109.4 245.1 244.7 245.2h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.8-245.2z" fill="currentColor"/>
+                                <path d="M2447.6 899.2c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2v245.2h244.8c135.3-.1 244.7-109.9 244.7-245.2zm-652.7 0v-654C1795 109.9 1685.5.1 1550.2 0c-135.3.1-244.8 109.9-244.8 245.2v654c-.1 135.2 109.4 245 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2z" fill="currentColor"/>
+                                <path d="M1550.1 2452.5c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-244.8v245.2c-.1 135.2 109.4 245 244.7 245.2zm0-654.1h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-652.7c-135.3.1-244.7 109.9-244.8 245.2-.1 135.3 109.4 245.1 244.7 245.2z" fill="currentColor"/>
+                                <path d="M0 1553.2c-.1 135.3 109.4 245.1 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2V1308H244.7C109.5 1308.1.1 1417.9 0 1553.2zm652.7 0v654c-.2 135.3 109.3 245.1 244.6 245.3 135.6-.1 245.1-109.9 245.2-245.2v-653.9c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2z" fill="currentColor"/>
+                            </g>
+                        </svg>
                     </div>
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mr-3">In Progress</span>
-                        <span class="text-gray-600">Currently in development</span>
+                    <div class="ml-3">
+                        <span class="text-gray-900 text-xl font-medium">Slack Integration</span>
+                        <p class="text-gray-600">Automatically update progress from Slack</p>
                     </div>
-                    <div class="flex items-center">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 mr-3">Planned</span>
-                        <span class="text-gray-600">Coming up in our roadmap</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-gray-100 p-2 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="text-gray-900 text-xl font-medium">RESTful API</span>
+                        <p class="text-gray-600">Update goals from anywhere through our API</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+            <img src="static/img/landing/okrs.png">
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Open Scoreboard Section - Q4 2025 -->
+<div id="scoreboard" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
+    <h2 class="text-4xl font-bold text-regal-800 font-serif">
+        Open Scoreboard
+        <span class="text-lg text-orange-600 ml-2">Coming Q4 2025</span>
+    </h2>
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+            <p class="text-2xl text-gray-800 mb-8">Track and share key metrics with the entire organization or community.</p>
+
+            <div class="mt-8 grid grid-cols-2 gap-6">
+                <div class="bg-azalea-200 p-4 rounded-lg">
+                    <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Key Metrics</div>
+                    <p class="text-gray-900 text-lg">Monitor crucial business and team performance indicators in real-time.</p>
+                </div>
+                <div class="bg-azalea-200 p-4 rounded-lg">
+                    <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Transparency</div>
+                    <p class="text-gray-900 text-lg">Build trust by sharing progress and results with all stakeholders.</p>
+                </div>
+            </div>
+
+            <!-- Integration information -->
+            <div class="mt-8 space-y-6">
+                <div class="flex items-center">
+                    <div class="bg-gray-100 p-2 rounded-lg">
+                        <svg class="h-6 w-6 text-gray-600" viewBox="0 0 2447.6 2452.5" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-rule="evenodd" fill-rule="evenodd">
+                                <path d="M897.4 0C762.1.1 652.6 109.9 652.7 245.2c-.1 135.3 109.4 245.1 244.7 245.2h244.7V245.2C1142.1 109.9 1032.7.1 897.4 0c.1 0 .1 0 0 0m0 654H244.8C109.5 654.1.1 763.9 0 899.2c-.1 135.3 109.4 245.1 244.7 245.2h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.8-245.2z" fill="currentColor"/>
+                                <path d="M2447.6 899.2c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2v245.2h244.8c135.3-.1 244.7-109.9 244.7-245.2zm-652.7 0v-654C1795 109.9 1685.5.1 1550.2 0c-135.3.1-244.8 109.9-244.8 245.2v654c-.1 135.2 109.4 245 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2z" fill="currentColor"/>
+                                <path d="M1550.1 2452.5c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-244.8v245.2c-.1 135.2 109.4 245 244.7 245.2zm0-654.1h652.7c135.3-.1 244.7-109.9 244.8-245.2.1-135.3-109.4-245.1-244.7-245.2h-652.7c-135.3.1-244.7 109.9-244.8 245.2-.1 135.3 109.4 245.1 244.7 245.2z" fill="currentColor"/>
+                                <path d="M0 1553.2c-.1 135.3 109.4 245.1 244.7 245.2 135.3-.1 244.8-109.9 244.8-245.2V1308H244.7C109.5 1308.1.1 1417.9 0 1553.2zm652.7 0v654c-.2 135.3 109.3 245.1 244.6 245.3 135.6-.1 245.1-109.9 245.2-245.2v-653.9c.1-135.3-109.4-245.1-244.7-245.2-135.3.1-244.8 109.9-244.8 245.2z" fill="currentColor"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="text-gray-900 text-xl font-medium">Slack Integration</span>
+                        <p class="text-gray-600">Automatically update metrics from Slack</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-gray-100 p-2 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="text-gray-900 text-xl font-medium">RESTful API</span>
+                        <p class="text-gray-600">Update metrics from anywhere through our API</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column - Mini Roadmap -->
-            <div class="bg-orange-600 rounded-3xl p-6 shadow-sm">
-                <div class="space-y-6 bg-white rounded-3xl p-6">
-                    <div class="border-l-4 border-orange-500 pl-4 py-2">
-                        <div class="text-sm font-semibold text-gray-500 mb-4">Q4 2023</div>
-                        <div class="space-y-4">
-                            <div>
-                                <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mb-2">In Progress</span>
-                                <h4 class="font-medium">Mobile App Beta Release</h4>
-                                <p class="text-sm text-gray-600">Access your workspace on iOS and Android devices</p>
-                            </div>
-                            <div>
-                                <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 mb-2">Shipped</span>
-                                <h4 class="font-medium">Share Files with Others</h4>
-                                <p class="text-sm text-gray-600">Now you can share files securely with people outside of your organization</p>
-                            </div>
-                        </div>
-                    </div>
+        </div>
 
-                    <div class="border-l-4 border-gray-300 pl-4 py-2">
-                        <div class="text-sm font-semibold text-gray-500 mb-4">Q1 2024</div>
-                        <div class="space-y-4">
-                            <div>
-                                <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 mb-2">Planned</span>
-                                <h4 class="font-medium">Team Collaboration Features</h4>
-                                <p class="text-sm text-gray-600">Real-time editing and commenting capabilities</p>
-                            </div>
-                        </div>
+        <div class="bg-orange-600 rounded-3xl p-6 shadow-sm flex items-center">
+            <div class="w-full h-full space-y-6">
+                <div class="h-full grid grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-gray-500 mb-1">Monthly Active Users</div>
+                        <div class="mt-4 text-3xl font-bold">24,582</div>
+                        <div class="text-green-600 text-lg">↑ 12.3%</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-sm text-gray-500 mb-1">Customer Satisfaction</div>
+                        <div class="mt-4 text-3xl font-bold">94.8%</div>
+                        <div class="text-green-600 text-lg">↑ 2.1%</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-sm text-gray-500 mb-1">Revenue MRR</div>
+                        <div class="mt-4 text-3xl font-bold">$86.5k</div>
+                        <div class="text-yellow-600 text-lg">↑ 2.4%</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-sm text-gray-500 mb-1">New Bug Tickets</div>
+                        <div class="mt-4 text-3xl font-bold">3 tickets</div>
+                        <div class="text-green-600 text-lg">↓ 50%</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
