@@ -1,9 +1,38 @@
-import os
-from typing import List
+import logging
+from typing import Dict, List
 
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import Flow
 from googleapiclient.discovery import build
+
+logger = logging.getLogger('candorship')
+
+
+class OAuthCredentials:
+    token: str
+    refresh_token: str
+    scopes: List[str]
+
+    def __init__(self, token: str, refresh_token: str, scopes: List[str]):
+        self.token = token
+        self.refresh_token = refresh_token
+        self.scopes = scopes
+
+
+class OAuthUserInfo:
+    email: str
+    family_name: str
+    given_name: str
+
+    def __init__(
+        self,
+        email: str,
+        given_name: str,
+        family_name: str,
+    ):
+        self.email = email
+        self.family_name = family_name
+        self.given_name = given_name
 
 
 class GoogleAPIClient(object):
@@ -43,17 +72,21 @@ class GoogleAPIClient(object):
         )
         return url
 
-    def get_oauth_credentials(self, code):
+    def get_oauth_credentials(self, code) -> OAuthCredentials | None:
         self.flow.fetch_token(code=code)
         creds = self.flow.credentials
 
-        return {
-            'token': creds.token,
-            'refresh_token': creds.refresh_token,
-            'scopes': self.scopes,
-        }
+        if not creds.refresh_token or not creds.token:
+            logger.error('No refresh token found')
+            return None
 
-    def get_user_profile(self, token, refresh_token):
+        return OAuthCredentials(
+            token=creds.token,
+            refresh_token=creds.refresh_token,
+            scopes=self.scopes,
+        )
+
+    def get_user_profile(self, token, refresh_token) -> OAuthUserInfo:
         creds = Credentials.from_authorized_user_info(
             {
                 'token': token,
@@ -67,4 +100,8 @@ class GoogleAPIClient(object):
         user_info_service = build('oauth2', 'v2', credentials=creds)
         user_info = user_info_service.userinfo().get().execute()
 
-        return user_info
+        return OAuthUserInfo(
+            email=user_info.get('email'),
+            family_name=user_info.get('family_name'),
+            given_name=user_info.get('given_name'),
+        )

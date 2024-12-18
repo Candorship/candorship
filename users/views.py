@@ -2,11 +2,12 @@ import os
 
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, redirect, render
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import redirect, render
 
 from integrations.google.client import GoogleAPIClient
 
+from .http import AuthenticatedHttpRequest
 from .models import ExternalProfile, User
 
 google_client = GoogleAPIClient(
@@ -18,7 +19,7 @@ google_client = GoogleAPIClient(
 )
 
 
-def signup(request):
+def signup(request: HttpRequest) -> HttpResponse:
     if request.user.is_authenticated:
         print('user authenticated')
         return redirect('/')
@@ -26,14 +27,14 @@ def signup(request):
     return render(request, 'users/signup.html')
 
 
-def login_user(request):
+def login_user(request: HttpRequest) -> HttpResponse:
     return render(
         request,
         'users/login.html',
     )
 
 
-def google_login_redirect(request):
+def google_login_redirect(request: HttpRequest) -> HttpResponse:
     """
     Starts the Google Login oauth flow.
     Google's response will be handled in the google_login_callback view.
@@ -42,7 +43,7 @@ def google_login_redirect(request):
     return redirect(url)
 
 
-def google_login_callback(request):
+def google_login_callback(request: AuthenticatedHttpRequest) -> HttpResponse:
     """
     Supports both login and signup flows.
     If the user is already signed in, we will update the user's Google OAuth credentials.
@@ -51,11 +52,14 @@ def google_login_callback(request):
     code = request.GET.get('code')
     creds = google_client.get_oauth_credentials(code)
 
+    if creds is None:
+        return redirect('/login')
+
     oauth_profile = google_client.get_user_profile(
-        token=creds['token'], refresh_token=creds['refresh_token']
+        token=creds.token, refresh_token=creds.refresh_token
     )
 
-    email = oauth_profile['email']
+    email = oauth_profile.email
 
     if request.user.is_authenticated:
         user = request.user
@@ -67,16 +71,16 @@ def google_login_callback(request):
             user = User(
                 username=email,
                 email=email,
-                first_name=oauth_profile['given_name'],
-                last_name=oauth_profile['family_name'],
+                first_name=oauth_profile.given_name,
+                last_name=oauth_profile.family_name,
             )
             user.set_unusable_password()
             user.save()
 
     profile, created = ExternalProfile.objects.get_or_create(user=user)
-    profile.google_access_token = creds['token']
-    profile.google_refresh_token = creds['refresh_token']
-    profile.google_scopes = creds['scopes']
+    profile.google_access_token = creds.token
+    profile.google_refresh_token = creds.refresh_token
+    profile.google_scopes = ','.join(creds.scopes)
     profile.google_enabled = True
     profile.save()
 
@@ -84,11 +88,11 @@ def google_login_callback(request):
     return redirect('/')
 
 
-def logout_user(request):
+def logout_user(request: HttpRequest) -> HttpResponse:
     logout(request)
     return redirect('/')
 
 
 @login_required
-def create_organization(request):
+def create_organization(request: HttpRequest) -> HttpResponse:
     return render(request, 'users/create_organization.html')

@@ -1,5 +1,5 @@
 import json
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 from django.urls import reverse
@@ -64,16 +64,16 @@ def test_google_login_redirect(mock_get_oauth_authorization_url, client):
 def test_google_login_callback(
     mock_get_user_profile, mock_get_oauth_credentials, client
 ):
-    mock_get_oauth_credentials.return_value = {
-        'token': 'fake-token',
-        'refresh_token': 'fake-refresh-token',
-        'scopes': json.dumps(['scope1', 'scope2']),
-    }
-    mock_get_user_profile.return_value = {
-        'email': 'testuser@example.com',
-        'given_name': 'Test',
-        'family_name': 'User',
-    }
+    mock_get_oauth_credentials.return_value = MagicMock(
+        token='fake-token',
+        refresh_token='fake-refresh-token',
+        scopes=['scope1', 'scope2'],
+    )
+    mock_get_user_profile.return_value = MagicMock(
+        email='testuser@example.com',
+        given_name='Test',
+        family_name='User',
+    )
 
     url = reverse('users:google-login-callback')
     response = client.get(url, {'code': 'fake-code'})
@@ -86,7 +86,8 @@ def test_google_login_callback(
     assert profile.google_access_token == 'fake-token'
     assert profile.google_refresh_token == 'fake-refresh-token'
     assert profile.google_scopes
-    google_scopes = json.loads(profile.google_scopes)
+
+    google_scopes = profile.google_scopes.split(',')
     assert 'scope1' in google_scopes
     assert 'scope2' in google_scopes
     assert profile.google_enabled
