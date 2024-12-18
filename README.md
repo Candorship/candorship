@@ -7,7 +7,7 @@
 Share roadmaps, updates, and solicit feedback for key decisions from your
 members and community.
 
-Learn more on [Candorship's homepage][1].
+Learn more on [Candorship's homepage][homepage].
 
 ## Key Features
 
@@ -18,9 +18,16 @@ Learn more on [Candorship's homepage][1].
 - Public Roadmap: Share what's coming up by on your product roadmap publicly
 
 
+## Development
+
+Candorship is built using Python, Django, Tailwind CSS, htmx, Alpine.js.
+
+Note: We are using [Tailwind 4.0 beta][twbeta].
+
+
 ## License
 
-Copyright 2024 Perch Labs
+Copyright 2025 Perch Labs
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -35,4 +42,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 
-[1]: https://candorship.com
+[homepage]: https://candorship.com
+[twbeta]: https://tailwindcss.com/docs/v4-beta
