@@ -17,6 +17,7 @@
 
 @theme {
     --font-serif: "Young Serif", "serif";
+    --font-subheader: "Shippori Mincho B1", "serif";
     --font-display: "Bricolage Grotesque", "sans-serif";
 
     --color-background: #FFFCFA;
