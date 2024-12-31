@@ -10,11 +10,11 @@
 
         <div class="grid lg:grid-cols-2 grid-cols-1 pt-10 pb-20">
             <div class="pt-4 order-2 lg:order-1 text-regal-800">
-                <div>
+                <div class="text-center lg:text-left">
                     <h1 class="text-5xl font-bold font-serif"><span class="text-orange-600">Chart</span> the course.<br />Share the <span class="text-orange-600">journey</span>.</h1>
-                    <p class="mt-4 text-2xl">Candorship helps you build radically open organizations and communities.</p>
+                    <p class="lg:mt-4 mt-6 text-2xl lg:w-full w-3/4 mx-auto">Candorship helps you build radically open organizations and communities.</p>
                 </div>
-                <div class="mt-12">
+                <div class="mt-12 flex justify-center lg:justify-start">
                     <a class="uppercase px-3 py-2 shadow-sm shadow-azalea-200 rounded-2xl bg-azalea-200 border border-regal-700" href="#learn-more">
                         Learn More
                     </a>
@@ -22,12 +22,12 @@
             </div>
 
             <div class="order-1 lg:order-2 flex justify-center">
-                <img class="w-full object-contain" src="/static/img/landing/hero.png"></a>
+                <img class="w-full max-h-[30vh] object-contain" src="/static/img/landing/hero.png"></a>
             </div>
         </div>
     </div>
     <div class="w-full py-3 bg-orange-600">
-        <div class="flex flex-row justify-evenly text-2xl text-slate-100 font-serif">
+        <div class="flex lg:flex-row flex-col justify-evenly items-center gap-y-4 lg:gap-y-0 text-2xl text-slate-100 font-serif">
             <p>Openess by default</p>
             <p>No anonymity</p>
             <p>Community</p>
@@ -38,8 +38,9 @@
 
     <div class="flex flex-col gap-y-16 mx-auto px-4 sm:px-6 lg:px-20 pt-16 pb-20">
         <div id="learn-more" class="flex flex-col gap-y-4">
-            <div class="text-3xl text-orange-600 text-center font-bold font-serif pb-10">
-                <h4 >Here To Help You Be Open</h4>
+            <div class="flex flex-col items-center justify-center pb-10">
+                <h4 class="text-3xl text-orange-600 font-bold font-serif ">Here To Help You Be Open</h4>
+                <img class="mt-4 md:w-1/2 w-3/4" src="{% static 'img/scribbles/underline-navy.png' %}" />
             </div>
 
             <!-- Feature Grid -->

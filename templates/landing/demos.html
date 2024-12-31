@@ -1,6 +1,12 @@
+{% load static %}
+
 <!-- Roadmap Demo Section -->
 <div id="roadmap" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
-    <h2 class="text-4xl font-bold text-regal-800 font-serif">Public Roadmap</h2>
+    <div class="lg:w-1/2 w-full">
+        <h2 class="text-4xl font-bold text-regal-800 font-serif">Public Roadmap</h2>
+        <img class="mt-2 w-3/4 md:w-1/2" src="{% static 'img/scribbles/underline-pink.png' %}" />
+    </div>
+
     <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
         <!-- Left Column - Description -->
         <div>
@@ -69,10 +75,13 @@
 
 <!-- Progress Updates Section - Q2 2025 -->
 <div id="progress" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
-    <h2 class="text-4xl font-bold text-regal-800 font-serif">
-        Progress Updates
-        <span class="text-lg text-orange-600 ml-2">Coming Q2 2025</span>
-    </h2>
+    <div class="lg:w-1/2 w-full">
+        <h2 class="text-4xl font-bold text-regal-800 font-serif">
+            Progress Updates
+            <span class="block md:inline text-lg text-orange-600 md:ml-2">Coming Q2 2025</span>
+        </h2>
+        <img class="mt-2 w-3/4 md:w-1/2" src="{% static 'img/scribbles/underline-pink.png' %}" />
+    </div>
     <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
         <!-- Left Column - Description -->
         <div>
@@ -191,11 +200,15 @@
             }
         }
     }">
-    <h2 class="text-4xl font-bold text-regal-800 font-serif">
-        Proposals, Decisions, and Feedback
-        <span class="text-lg text-orange-600 ml-2">Coming Q2 2025</span>
-    </h2>
-    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <div class="lg:w-1/2 w-full">
+        <h2 class="text-4xl font-bold text-regal-800 font-serif">
+            Proposals, Decisions, and Feedback
+            <span class="block md:inline text-lg text-orange-600 md:ml-2">Coming Q2 2025</span>
+        </h2>
+        <img class="mt-2 w-3/4 md:w-1/2" src="{% static 'img/scribbles/underline-pink.png' %}" />
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-16">
         <!-- Left Column - Description (was right column) -->
         <div class="">
             <p class="text-2xl text-gray-800 mb-8" x-text="activeTab === 'organization' ? organizationDescription : (activeTab === 'opensource' ? openSourceDescription : communityDescription) ">
@@ -203,88 +216,97 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <div class="bg-azalea-200 p-4 rounded-lg">
-                    <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Proposals</div>
+                    <div class="text-3xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Proposals</div>
                     <p class="text-gray-900 text-lg">Let members propose, discuss changes and enhancements they would like to see.</p>
                 </div>
                 <div class="bg-azalea-200 p-4 rounded-lg">
-                    <div class="text-3xl mb-2 font-serif underline decoration-orange-600">RFCs</div>
+                    <div class="text-3xl mb-2 font-subheader tracking-tight underline decoration-orange-600">RFCs</div>
                     <p class="text-gray-900 text-lg">Collect feedback from others (RFCs: Request for Comments) before making decisions.</p>
                 </div>
                 <div class="bg-azalea-200 p-4 rounded-lg">
-                    <div class="text-3xl mb-2 font-serif underline decoration-orange-600">Decisions</div>
+                    <div class="text-3xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Decisions</div>
                     <p class="text-gray-900 text-lg">Share decisions once they are made.</p>
                 </div>
             </div>
         </div>
 
         <!-- Right Column - Mini Feedback Board -->
-        <div class="bg-orange-600 rounded-3xl p-6 shadow-sm">
-            <div class="bg-white p-6 rounded-3xl">
-                <p class="text-gray-800 text-sm">See examples for your organization</p>
-                <div class="mt-4 mb-6 flex space-x-1 rounded-lg bg-gray-200 p-1">
-                    <button
-                        @click="activeTab = 'organization'"
-                        :class="activeTab === 'organization' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
-                        class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
-                        Company
-                    </button>
-                    <button
-                        @click="activeTab = 'community'"
-                        :class="activeTab === 'community' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
-                        class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
-                        Community
-                    </button>
-                    <button
-                        @click="activeTab = 'opensource'"
-                        :class="activeTab === 'opensource' ? 'bg-white shadow-sm font-bold' : 'text-gray-500 hover:text-gray-700'"
-                        class="w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition-all duration-700">
-                        Open Source Project
-                    </button>
-                </div>
+        <div class="flex flex-col">
+            <div class="bg-orange-600 rounded-3xl p-6 shadow-sm">
+                <div class="bg-white p-6 rounded-3xl">
+                    <div class="mt-4 mb-6 flex space-x-1 rounded-lg p-1">
+                        <button
+                            @click="activeTab = 'organization'"
+                            :class="activeTab === 'organization' ? 'bg-azalea-200 font-bold' : 'hover:text-gray-700 hover:bg-azalea-100'"
+                            class="w-full rounded-lg py-2.5 text-sm font-semibold uppercase leading-5 transition-all duration-700 border-solid border-2 border-orange-600 ">
+                            Company
+                        </button>
+                        <button
+                            @click="activeTab = 'community'"
+                            :class="activeTab === 'community' ? 'bg-azalea-200 shadow-sm font-bold' : 'hover:text-gray-700 hover:bg-azalea-100'"
+                            class="w-full rounded-lg py-2.5 text-sm font-semibold uppercase leading-5 transition-all duration-700 border-solid border-2 border-orange-600 ">
+                            Community
+                        </button>
+                        <button
+                            @click="activeTab = 'opensource'"
+                            :class="activeTab === 'opensource' ? 'bg-azalea-200 shadow-sm font-bold' : ' hover:text-gray-700 hover:bg-azalea-100'"
+                            class="w-full rounded-lg py-2.5 text-sm font-semibold uppercase leading-5 transition-all duration-700 border-solid border-2 border-orange-600 ">
+                            Open Source
+                        </button>
+                    </div>
 
-                <div class="space-y-6">
-                    <template x-for="item in getSelection" :key="item.title">
-                        <div class="flex items-center gap-4 pb-4 border-b">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-center" :class="item.label" x-text="item.type"></span>
-                            <h4 class="font-medium" x-text="item.title"></h4>
-                            <div class="ml-auto flex items-center text-gray-500">
-                                <span x-text="item.comments"></span>
-                                <template x-if="item.type !== 'Decision Made'">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                    </svg>
-                                </template>
-                                <template x-if="item.type === 'Decision Made'">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-                                    </svg>
-                                </template>
+                    <div class="space-y-6">
+                        <template x-for="item in getSelection" :key="item.title">
+                            <div class="flex items-center gap-4 pb-4 border-b">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-center" :class="item.label" x-text="item.type"></span>
+                                <h4 class="font-medium" x-text="item.title"></h4>
+                                <div class="ml-auto flex items-center text-gray-500">
+                                    <span x-text="item.comments"></span>
+                                    <template x-if="item.type !== 'Decision Made'">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                        </svg>
+                                    </template>
+                                    <template x-if="item.type === 'Decision Made'">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                                        </svg>
+                                    </template>
+                                </div>
                             </div>
-                        </div>
-                    </template>
+                        </template>
+                    </div>
                 </div>
             </div>
+            <div class="flex flex-row gap-x-2 items-center w-3/4 lg:w-1/2 mx-auto lg:mx-0">
+                <h4 class="font-serif text-xl text-orange-600 text-center">See examples for your organisation</h4>
+                <img class="h-1/3" src="{% static 'img/scribbles/arrow-up-right.png' %}">
+            </div>
+
         </div>
     </div>
 </div>
 
 <!-- Goals and OKRs Section - Q3 2025 -->
 <div id="goals" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
-    <h2 class="text-4xl font-bold text-regal-800 font-serif">
-        Goals and OKRs
-        <span class="text-lg text-orange-600 ml-2">Coming Q3 2025</span>
-    </h2>
+    <div class="lg:w-1/2 w-full">
+        <h2 class="text-4xl font-bold text-regal-800 font-serif">
+            Goals and OKRs
+            <span class="block md:inline text-lg text-orange-600 md:ml-2">Coming Q3 2025</span>
+        </h2>
+        <img class="mt-2 w-3/4 md:w-1/2" src="{% static 'img/scribbles/underline-pink.png' %}" />
+    </div>
     <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="order-2 lg:order-1">
             <p class="text-2xl text-gray-800 mb-8">Set transparent goals and track progress openly across your organization.</p>
             <div class="grid grid-cols-2 gap-6">
                 <div class="bg-azalea-200 p-4 rounded-lg">
-                    <div class="text-2xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Objectives</div>
-                    <p class="text-gray-900 text-lg">Set clear organizational and team objectives that everyone can see and align with.</p>
+                    <div class="text-3xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Objectives</div>
+                    <p class="text-gray-900 text-xl">Set clear organizational and team objectives that everyone can see and align with.</p>
                 </div>
                 <div class="bg-azalea-200 p-4 rounded-lg">
-                    <div class="text-2xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Key Results</div>
-                    <p class="text-gray-900 text-lg">Track measurable outcomes that show progress towards objectives.</p>
+                    <div class="text-3xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Key Results</div>
+                    <p class="text-gray-900 text-xl">Track measurable outcomes that show progress towards objectives.</p>
                 </div>
             </div>
             <!-- Integration information -->
@@ -329,22 +351,25 @@
 
 <!-- Open Scoreboard Section - Q4 2025 -->
 <div id="scoreboard" class="mx-auto px-4 sm:px-6 lg:px-20 py-16 bg-gradient-to-r from-white via-primary-50 to-primary-100">
-    <h2 class="text-4xl font-bold text-regal-800 font-serif">
-        Open Scoreboard
-        <span class="text-lg text-orange-600 ml-2">Coming Q4 2025</span>
-    </h2>
+    <div class="lg:w-1/2 w-full">
+        <h2 class="text-4xl font-bold text-regal-800 font-serif">
+            Open Scoreboard
+            <span class="block md:inline text-lg text-orange-600 md:ml-2">Coming Q4 2025</span>
+        </h2>
+        <img class="mt-2 w-3/4 md:w-1/2" src="{% static 'img/scribbles/underline-pink.png' %}" />
+    </div>
     <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
             <p class="text-2xl text-gray-800 mb-8">Track and share key metrics with the entire organization or community.</p>
 
             <div class="mt-8 grid grid-cols-2 gap-6">
                 <div class="bg-azalea-200 p-4 rounded-lg">
-                    <div class="text-2xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Key Metrics</div>
-                    <p class="text-gray-900 text-lg">Monitor crucial business and team performance indicators in real-time.</p>
+                    <div class="text-3xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Key Metrics</div>
+                    <p class="text-gray-900 text-xl">Monitor crucial business and team performance indicators in real-time.</p>
                 </div>
                 <div class="bg-azalea-200 p-4 rounded-lg">
-                    <div class="text-2xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Transparency</div>
-                    <p class="text-gray-900 text-lg">Build trust by sharing progress and results with all stakeholders.</p>
+                    <div class="text-3xl mb-2 font-subheader tracking-tight underline decoration-orange-600">Transparency</div>
+                    <p class="text-gray-900 text-xl">Build trust by sharing progress and results with all stakeholders.</p>
                 </div>
             </div>
 
