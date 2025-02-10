@@ -1,10 +1,11 @@
 from django.contrib.auth.backends import BaseBackend
+
 from .models import User
 
 
 class UserBackend(BaseBackend):
     def authenticate(self, request, email, password):
-        qs = User.objects.select_related('default_organisation')
+        qs = User.objects.prefetch_related('organisations')
         try:
             user = qs.get(email=email)
         except User.DoesNotExist:
@@ -16,7 +17,7 @@ class UserBackend(BaseBackend):
         return None
 
     def get_user(self, user_id):
-        qs = User.objects.select_related('default_organisation')
+        qs = User.objects.prefetch_related('organisations')
         try:
             return qs.get(pk=user_id)
         except User.DoesNotExist:
