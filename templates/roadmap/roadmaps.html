@@ -1,0 +1,104 @@
+{% extends 'partials/anonymous_base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'partials/nav.html' %}
+
+    <div class="flex flex-col gap-y-8 mx-auto px-4 sm:px-6 lg:px-20 pt-8 lg:pt-16 pb-20">
+        <div class="max-w-4xl mx-auto w-full">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold font-serif text-regal-800">Roadmaps</h1>
+                <p class="mt-2 text-xl text-gray-600">Manage your organization's public roadmaps.</p>
+            </div>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="mb-4 p-4 rounded-md {% if message.tags == 'success' %}bg-green-50 text-green-700{% else %}bg-red-50 text-red-700{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <!-- Create New Roadmap Form -->
+            <div class="mb-8 bg-white border border-gray-200 rounded-lg p-4">
+                <form method="post" class="flex items-end gap-x-4">
+                    {% csrf_token %}
+                    {% if form.errors %}
+                    <div class="text-red-600 text-sm">Please correct the errors below.</div>
+                    {% endif %}
+
+                    <div class="flex-grow">
+                        <input type="text"
+                               name="{{ form.name.name }}"
+                               id="{{ form.name.id_for_label }}"
+                               class="shadow-sm focus:ring-primary-500 bg-white focus:border-primary-500 block w-full text-sm border-gray-300 rounded-lg p-2"
+                               placeholder="Enter roadmap name (e.g. Product Development 2024)"
+                               value="{{ form.name.value|default:'' }}">
+                        {% if form.name.errors %}
+                        <p class="mt-1 text-sm text-red-600">{{ form.name.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit"
+                            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm bg-azalea-200 hover:bg-primary-700 transition-colors">
+                        Create Roadmap
+                    </button>
+                </form>
+            </div>
+
+            <!-- Existing Roadmaps -->
+            {% if roadmaps %}
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-4">Your Roadmaps</h2>
+                <div class="space-y-4">
+                    {% for roadmap in roadmaps %}
+                    <div x-data="{ open: false }" class="border border-gray-200 rounded-lg overflow-hidden bg-white">
+                        <div class="px-4 py-3 border-b border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-medium">{{ roadmap.name }}</h3>
+                                <button @click="open = !open" class="text-gray-500 hover:text-gray-700">
+                                    <svg class="h-5 w-5 transform transition-transform duration-200"
+                                         :class="{ 'rotate-180': open }"
+                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div x-show="open"
+                             x-collapse
+                             class="divide-y divide-gray-200">
+                            {% for tf in roadmap.time_frames.all %}
+                            <div class="px-4 py-3 bg-white">
+                                <h4 class="font-medium text-gray-700 text-sm mb-2">{{ tf.name }}</h4>
+                                <div class="pl-4 space-y-2">
+                                    {% for item in tf.items.all %}
+                                    <div class="flex items-center gap-x-3">
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium
+                                            {% if item.status == 'IN_PROGRESS' %}bg-azalea-200
+                                            {% elif item.status == 'PLANNED' %}bg-orange-600 text-white
+                                            {% else %}bg-green-100{% endif %}
+                                            text-slate-800">
+                                            {{ item.status_formatted }}
+                                        </span>
+                                        <span class="text-sm">{{ item.name }}</span>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="bg-gray-50 px-4 py-2 border-t border-gray-200">
+                            <a href="{% url 'roadmap:roadmap_detail' organization.slug %}"
+                               class="text-sm text-primary-600 hover:text-primary-700">View public page →</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

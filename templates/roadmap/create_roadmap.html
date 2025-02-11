@@ -1,0 +1,65 @@
+{% extends 'partials/anonymous_base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'partials/nav.html' %}
+
+    <div class="flex flex-col gap-y-16 mx-auto px-4 sm:px-6 lg:px-20 pt-8 lg:pt-16 pb-20">
+        <div class="max-w-4xl mx-auto w-full">
+            <a href="#" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to Dashboard
+            </a>
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold font-serif text-regal-800">Create New Roadmap</h1>
+                <p class="mt-2 text-xl text-gray-600">Create a public roadmap to share your organization's plans with your community.</p>
+            </div>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="mb-4 p-4 rounded-md {% if message.tags == 'success' %}bg-green-50 text-green-700{% else %}bg-red-50 text-red-700{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post" class="space-y-8 bg-gray-50 p-8 rounded-xl shadow-sm">
+                {% csrf_token %}
+
+                {% if form.errors %}
+                <div class="bg-red-50 border border-red-200 text-red-600 px-6 py-4 rounded-lg relative" role="alert">
+                    Please correct the errors below.
+                </div>
+                {% endif %}
+
+                <div class="space-y-3">
+                    <label for="{{ form.name.id_for_label }}" class="block text-lg font-medium text-gray-900">Roadmap Name</label>
+                    <div class="mt-1">
+                        <input type="text"
+                               name="{{ form.name.name }}"
+                               id="{{ form.name.id_for_label }}"
+                               class="shadow-sm focus:ring-primary-500 bg-white focus:border-primary-500 block w-full text-lg border-gray-300 rounded-lg p-3"
+                               placeholder="e.g. Product Development 2024"
+                               value="{{ form.name.value|default:'' }}">
+                        {% if form.name.errors %}
+                        <p class="mt-2 text-sm text-red-600">{{ form.name.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="flex justify-end space-x-4 pt-4">
+                    <a href="{% url 'roadmap:roadmap' %}"
+                       class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-lg font-medium rounded-2xl text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                        Cancel
+                    </a>
+                    <button type="submit"
+                            class="inline-flex items-center px-3 py-2 border border-transparent text-lg font-medium rounded-2xl shadow-sm bg-azalea-200 hover:bg-primary-700 transition-colors">
+                        Create Roadmap
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
