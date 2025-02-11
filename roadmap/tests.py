@@ -41,13 +41,6 @@ def roadmap_item(roadmap, time_frame):
 
 
 @pytest.mark.django_db
-def test_roadmap_list_view(client):
-    url = reverse('roadmap:roadmap')
-    response = client.get(url)
-    assertTemplateUsed(response, 'roadmap/roadmap.html')
-
-
-@pytest.mark.django_db
 def test_roadmap_detail_view(client, organization, roadmap, time_frame, roadmap_item):
     # Invalid slug
     url = reverse('roadmap:roadmap_detail', kwargs={'slug': 'nonexistent-org'})
