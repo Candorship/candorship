@@ -8,8 +8,12 @@ from db.models import BaseModel, CreatedUpdatedMixin
 
 class Organization(BaseModel, CreatedUpdatedMixin):
     name = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True)
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='organizations/', blank=True, null=True)
+
+    github_url = models.URLField(blank=True, null=True)
+    homepage_url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name
