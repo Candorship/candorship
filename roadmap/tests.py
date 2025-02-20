@@ -57,8 +57,8 @@ def test_roadmap_detail_view(client, organization, roadmap, time_frame, roadmap_
 
 
 @pytest.mark.django_db
-def test_create_roadmap_view(client, organization, django_user_model):
-    url = reverse('roadmap:create_roadmap', kwargs={'slug': organization.slug})
+def test_roadmaps_view(client, organization, django_user_model):
+    url = reverse('roadmap:roadmaps', kwargs={'slug': organization.slug})
 
     # Test access without login
     response = client.get(url)
@@ -70,21 +70,14 @@ def test_create_roadmap_view(client, organization, django_user_model):
     client.login(username='testuser', password='12345')
 
     # Test invalid organization slug
-    invalid_url = reverse('roadmap:create_roadmap', kwargs={'slug': 'invalid-slug'})
+    invalid_url = reverse('roadmap:roadmaps', kwargs={'slug': 'invalid-slug'})
     response = client.get(invalid_url)
     assert response.status_code == 404
-
-    # Test successful GET request
-    response = client.get(url)
-    assert response.status_code == 200
-    assertTemplateUsed(response, 'roadmap/create_roadmap.html')
-    assert 'form' in response.context
-    assert response.context['organization'] == organization
 
     # Test successful POST request
     response = client.post(url, {'name': 'Test Roadmap'})
     assertRedirects(
-        response, reverse('roadmap:roadmap_detail', kwargs={'slug': organization.slug})
+        response, reverse('roadmap:roadmaps', kwargs={'slug': organization.slug})
     )
     assert OrganizationRoadmap.objects.filter(
         organization=organization, name='Test Roadmap'
