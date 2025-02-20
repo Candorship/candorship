@@ -1,14 +1,18 @@
 import os
 
-from django.contrib.auth import login, logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 
 from integrations.google.client import GoogleAPIClient
 
+from .forms import LoginForm
 from .http import AuthenticatedHttpRequest
 from .models import ExternalProfile, User
+
+REMEMBER_ME_DURATION = 2592000  # 30 days in seconds
+
 
 google_client = GoogleAPIClient(
     client_id=os.environ.get('GOOGLE_CLIENT_ID', ''),
@@ -28,10 +32,23 @@ def signup(request: HttpRequest) -> HttpResponse:
 
 
 def login_user(request: HttpRequest) -> HttpResponse:
-    return render(
-        request,
-        'users/login.html',
-    )
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user = authenticate(
+                username=form.cleaned_data['email'],
+                password=form.cleaned_data['password'],
+            )
+            if user is not None:
+                login(request, user)
+                if form.cleaned_data['remember_me']:
+                    request.session.set_expiry(REMEMBER_ME_DURATION)
+                return redirect('/')
+            form.add_error(None, 'Invalid email or password')
+    else:
+        form = LoginForm()
+
+    return render(request, 'users/login.html', {'form': form})
 
 
 def google_login_redirect(request: HttpRequest) -> HttpResponse:

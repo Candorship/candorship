@@ -29,18 +29,6 @@ def test_signup(client, user1):
 
 
 @pytest.mark.django_db
-def test_login(client, user1):
-    url = reverse('users:login')
-    resp = client.get(url)
-    assertTemplateUsed(resp, 'users/login.html')
-
-    client.force_login(user1)
-
-    resp = client.get(url)
-    assertTemplateUsed(resp, 'users/login.html')
-
-
-@pytest.mark.django_db
 def test_logout(client, user1):
     logout_url = reverse('users:logout')
 
@@ -91,3 +79,51 @@ def test_google_login_callback(
     assert 'scope1' in google_scopes
     assert 'scope2' in google_scopes
     assert profile.google_enabled
+
+
+@pytest.mark.django_db
+def test_login_user(client, user1):
+    url = reverse('users:login')
+
+    # Test GET request
+    resp = client.get(url)
+    assertTemplateUsed(resp, 'users/login.html')
+
+    # Test successful login without remember me
+    resp = client.post(
+        url,
+        {
+            'email': user1.email,
+            'password': '1234',  # assuming this is the password set in fixture
+            'remember_me': False,
+        },
+    )
+    assertRedirects(resp, '/')
+
+    # Test successful login with remember me
+    client.logout()
+    resp = client.post(
+        url, {'email': user1.email, 'password': '1234', 'remember_me': True}
+    )
+    assertRedirects(resp, '/')
+    assert int(client.session.get_expiry_age()) == 2592000  # 30 days
+
+    # Test invalid credentials
+    client.logout()
+    resp = client.post(
+        url, {'email': user1.email, 'password': '2345', 'remember_me': False}
+    )
+    assert resp.status_code == 200
+    assertTemplateUsed(resp, 'users/login.html')
+    assert 'Invalid email or password' in str(resp.content)
+
+    # Test invalid form submission
+    resp = client.post(
+        url,
+        {
+            'email': 'not-an-email',
+            'password': '',
+        },
+    )
+    assert resp.status_code == 200
+    assertTemplateUsed(resp, 'users/login.html')
