@@ -2,27 +2,28 @@
 
  Chart the course. Share the journey.
 
- Candorship helps you build radically open organizations and communities.
+ Candorship transforms how teams work together by putting transparency at the core of project management. See everything, know everything, achieve everything.
 
-Share roadmaps, updates, and solicit feedback for key decisions from your
-members and community.
+Run projects transparently in your organization by breaking down silos that interfere with team collaboration.
+
+Candorship is a replacement for Basecamp, Jira, Trello, and similar products.
 
 Learn more on [Candorship's homepage][homepage].
 
 ## Key Features
 
-- Goals and OKRs: Set and track objectives transparently
+- Projects: Plan and execute projects.
+- Goals and OKRs: Set and track objectives as an organization and as teams transparently
 - Open Scoreboard: Monitor and share key metrics openly
 - Proposals and Feedback: Gather and organize feedback that drives decisions
 - Progress Updates: Keep everyone aligned with regular updates
-- Public Roadmap: Share what's coming up by on your product roadmap publicly
-
+- Roadmap: Share what's coming up by on your company or product roadmap
 
 ## Development
 
 Candorship is built using Python, Django, Tailwind CSS, htmx, Alpine.js.
 
-Note: We are using [Tailwind 4.0 beta][twbeta].
+Note: We are using [Tailwind 4][twbeta].
 
 
 ## License
@@ -43,4 +44,4 @@ limitations under the License.
 
 
 [homepage]: https://candorship.com
-[twbeta]: https://tailwindcss.com/docs/v4-beta
+[twbeta]: https://tailwindcss.com/docs/v4
