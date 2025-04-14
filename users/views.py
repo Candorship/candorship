@@ -7,6 +7,7 @@ from django.shortcuts import redirect, render
 
 from integrations.google.client import GoogleAPIClient
 
+from .forms import LoginForm
 from .http import AuthenticatedHttpRequest
 from .models import ExternalProfile, User
 
@@ -28,10 +29,15 @@ def signup(request: HttpRequest) -> HttpResponse:
 
 
 def login_user(request: HttpRequest) -> HttpResponse:
-    return render(
-        request,
-        'users/login.html',
-    )
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            login(request, form.cleaned_data['user'])
+            return redirect('/')
+    else:
+        form = LoginForm()
+
+    return render(request, 'users/login.html', {'form': form})
 
 
 def google_login_redirect(request: HttpRequest) -> HttpResponse:
