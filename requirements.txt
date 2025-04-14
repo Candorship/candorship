@@ -22,11 +22,11 @@ exceptiongroup==1.2.2
 executing==2.2.0
 fabric==3.2.2
 google-api-core==2.24.2
-google-api-python-client==2.166.0
-google-auth==2.38.0
+google-api-python-client==2.167.0
+google-auth==2.39.0
 google-auth-httplib2==0.2.0
 google-auth-oauthlib==1.2.1
-googleapis-common-protos==1.69.2
+googleapis-common-protos==1.70.0
 httplib2==0.22.0
 idna==3.10
 iniconfig==2.1.0
@@ -68,7 +68,7 @@ pyyaml==6.0.2
 requests==2.32.3
 requests-oauthlib==2.0.0
 rich==13.8.1
-rsa==4.9
+rsa==4.9.1
 sendgrid==6.11.0
 setuptools==78.1.0
 six==1.17.0

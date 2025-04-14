@@ -24,6 +24,7 @@ class User(AbstractUser, CreatedUpdatedMixin):
     objects: UserManager = UserManager()
 
     email = models.EmailField(unique=True)
+    email_verified = models.BooleanField(default=False)
     organizations = models.ManyToManyField(
         Organization, related_name='users', through='OrganizationUser'
     )

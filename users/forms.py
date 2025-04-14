@@ -1,6 +1,33 @@
 from django import forms
 from django.contrib.auth import authenticate
-from django.core.exceptions import ValidationError
+
+from .models import User
+
+
+class SignupForm(forms.Form):
+    email = forms.EmailField(
+        required=True,
+    )
+    password = forms.CharField(
+        required=True,
+    )
+    password2 = forms.CharField(
+        required=True,
+    )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        password2 = cleaned_data.get('password2')
+
+        if password and password2 and password != password2:
+            self.add_error('password2', "Passwords don't match.")
+
+        email = cleaned_data.get('email')
+        if email and User.objects.filter(email=email).exists():
+            self.add_error('email', 'Email is used by an existing account.')
+
+        return cleaned_data
 
 
 class LoginForm(forms.Form):
