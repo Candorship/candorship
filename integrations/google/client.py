@@ -23,16 +23,15 @@ class OAuthUserInfo:
     email: str
     family_name: str
     given_name: str
+    verified_email: bool = False
 
     def __init__(
-        self,
-        email: str,
-        given_name: str,
-        family_name: str,
+        self, email: str, given_name: str, family_name: str, verified_email: bool
     ):
         self.email = email
         self.family_name = family_name
         self.given_name = given_name
+        self.verified_email = verified_email
 
 
 class GoogleAPIClient(object):
@@ -100,8 +99,19 @@ class GoogleAPIClient(object):
         user_info_service = build('oauth2', 'v2', credentials=creds)
         user_info = user_info_service.userinfo().get().execute()
 
+        # Check if user email is authoritative
+        # Cases where Google is authoritative:
+        # email has a @gmail.com suffix, this is a Gmail account.
+        # email_verified is true and hd is set, this is a G Suite account.
+        email = user_info.get('email', '')
+        domain = email.split('@')[-1]
+        verified_email = False
+        if domain == 'gmail.com' or user_info.get('hd', '') == domain:
+            verified_email = True
+
         return OAuthUserInfo(
             email=user_info.get('email'),
             family_name=user_info.get('family_name'),
             given_name=user_info.get('given_name'),
+            verified_email=verified_email,
         )
