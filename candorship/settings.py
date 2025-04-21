@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'users',
     'landing',
     'roadmap',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
