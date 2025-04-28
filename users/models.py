@@ -25,8 +25,8 @@ class User(AbstractUser, CreatedUpdatedMixin):
 
     email = models.EmailField(unique=True)
     email_verified = models.BooleanField(default=False)
-    organizations = models.ManyToManyField(
-        Organization, related_name='users', through='OrganizationUser'
+    organization = models.ForeignKey(
+        Organization, on_delete=models.CASCADE, related_name='users', null=True
     )
     profile_photo = models.ImageField(
         upload_to='profile_photos/', blank=True, null=True

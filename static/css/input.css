@@ -17,20 +17,21 @@
     @font-face {
         font-family: 'Bricolage Grotesque';
         font-style: normal;
-        font-weight: 400;
+        font-weight: 200 300 400 500 600 700 800;
         src: url(/static/fonts/BricolageGrotesque.ttf) format('truetype');
     }
 
     @font-face {
         font-family: 'Young Serif';
         font-style: normal;
-        font-weight: 200;
+        font-weight: 200 300 400 500 600 700 800;
         src: url(/static/fonts/YoungSerif.ttf) format('truetype');
     }
 
     @font-face {
         font-family: 'Shippori Mincho B1';
         font-style: normal;
+        font-weight: 200 300 400 500 600 700 800;
         src: url(/static/fonts/ShipporiMinchoB1.ttf) format('truetype');
     }
 }

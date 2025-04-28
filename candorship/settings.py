@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'db',
     'users',
     'landing',
+    'projects',
     'roadmap',
     'dashboard',
 ]

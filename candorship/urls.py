@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('users.urls', namespace='users')),
     path('', include('landing.urls', namespace='landing')),
     path('', include('roadmap.urls', namespace='roadmap')),
+    path('', include('projects.urls', namespace='projects')),
     path('', include('dashboard.urls', namespace='dashboard')),
     path('__reload__/', include('django_browser_reload.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

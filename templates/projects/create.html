@@ -1,0 +1,13 @@
+{% extends 'partials/anonymous_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center">
+    <div class="max-w-4xl w-full px-4">
+        <h1 class="text-3xl font-bold font-serif text-regal-800 text-center mb-8">Create New Project</h1>
+        <div id="form-container" class="flex justify-center">
+            {% include "projects/partials/form.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}
